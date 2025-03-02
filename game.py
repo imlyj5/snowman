@@ -28,7 +28,7 @@ def snowman(snowman_word):
     while not game_status_check and wrong_guesses_count < SNOWMAN_MAX_WRONG_GUESSES: #Enter the loop when the word is not yet been guessed and the wrong guess count haven't exceed max wrong guess
         user_input = get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list)
 
-        if user_input in correct_letter_guess_statuses: #if user inputs a letter in snowman word, incremant the letter's status count by 1
+        if user_input in correct_letter_guess_statuses: #if user inputs a letter in snowman word, set that letter's status to True in the dictionary
             correct_letter_guess_statuses[user_input] = True
         else: #Otherwise, increment the wrong_guesses_count and append the wrong word to wrong_guesses_list
             wrong_guesses_count += 1
