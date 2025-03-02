@@ -30,10 +30,11 @@ def snowman(snowman_word):
 
         if user_input in correct_letter_guess_statuses: #if user inputs a letter in snowman word, set that letter's status to True in the dictionary
             correct_letter_guess_statuses[user_input] = True
+            print("You guessed a letter that's in the word!")
         else: #Otherwise, increment the wrong_guesses_count and append the wrong word to wrong_guesses_list
             wrong_guesses_count += 1
             wrong_guesses_list.append(user_input)
-
+            print(f"The letter {user_input} is not in the word")
         game_status_check = is_word_guessed(snowman_word, correct_letter_guess_statuses) #Check the game status before ending the loop
         print_word_progress_string(snowman_word, correct_letter_guess_statuses) # print out current progress
         print_snowman_graphic(wrong_guesses_count) #print out snowman graph based on wrong guess gount
