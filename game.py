@@ -29,7 +29,7 @@ def snowman(snowman_word):
         user_input = get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list)
 
         if user_input in correct_letter_guess_statuses: #if user inputs a letter in snowman word, incremant the letter's status count by 1
-            correct_letter_guess_statuses[user_input] += 1
+            correct_letter_guess_statuses[user_input] = True
         else: #Otherwise, increment the wrong_guesses_count and append the wrong word to wrong_guesses_list
             wrong_guesses_count += 1
             wrong_guesses_list.append(user_input)
